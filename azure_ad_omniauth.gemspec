@@ -17,8 +17,6 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
 
-  spec.add_development_dependency 'omniauth-oauth2', '~> 1.6.0'
-  spec.add_development_dependency 'omniauth', '~> 1.9.0'
-  spec.add_runtime_dependency 'omniauth', '~> 1.9.0'
-  spec.add_runtime_dependency 'omniauth-oauth2', '~> 1.6.0'
+  spec.add_dependency 'omniauth', '~> 1.0'
+  spec.add_runtime_dependency 'omniauth-oauth2', '~> 1.4'
 end
