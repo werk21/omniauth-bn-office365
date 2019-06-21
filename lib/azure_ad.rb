@@ -1,6 +1,6 @@
-require 'omniauth/strategies/azure_ad'
+#require 'omniauth/strategies/azure_ad'
 
-module testing
-    class aaaa
+module Testing
+    class Aaaa
     end
 end
