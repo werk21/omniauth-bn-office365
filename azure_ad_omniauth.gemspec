@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require File.expand_path('../lib/OmniAuth/azure-ad-omniauth/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.name          = "omniauth-azure-ad"
+  spec.name          = "azure-ad-omniauth"
   spec.version       = OmniAuth::Azure::AD::VERSION
   spec.authors       = ["shawn-higgins1"]
   spec.email         = ["23224097+shawn-higgins1@users.noreply.github.com"]
