@@ -8,7 +8,7 @@ module OmniAuth
     # Implements an OmniAuth strategy to get a Microsoft Graph
     # compatible token from Azure AD
     class AzureAd < OmniAuth::Strategies::OAuth2
-      option :name, :azure_ad
+      option :name, 'azure_ad'
 
       DEFAULT_SCOPE = 'openid email profile User.Read'
 
