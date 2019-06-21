@@ -26,15 +26,21 @@ module OmniAuth
 
       # Get additional information after token is retrieved
       extra do
+        raw_info
+      end
+
+      info do
         {
-          'raw_info' => raw_info
+          name: raw_info['displayName'],
+          username: raw_info['displayName'],
+          email: raw_info['mail'] || raw_info['userPrincipalName'],
+          image: avatar_file
         }
       end
 
       def raw_info
         # Get user profile information from the /me endpoint
         @raw_info ||= verify_hd
-        @raw_info[:image] = avatar_file
         @raw_info
       end
 
