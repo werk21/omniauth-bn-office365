@@ -1,6 +1,6 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require File.expand_path('../lib/OmniAuth/azure-ad-omniauth/version', __FILE__)
+require File.expand_path('../lib/omniauth/azure-ad-omniauth/version', __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name          = "azure-ad-omniauth"
@@ -12,6 +12,10 @@ Gem::Specification.new do |spec|
   spec.description   = "A ruby gem for using omniauth and Azure Active Directory"
 
   spec.require_paths = ["lib"]
+
+  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  end
 
   spec.add_development_dependency "bundler", "~> 2.0.1"
   spec.add_development_dependency 'omniauth-oauth2', '~> 1.6.0'
