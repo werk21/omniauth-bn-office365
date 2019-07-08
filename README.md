@@ -1,4 +1,4 @@
-# azure-ad-ominauth
+# ominauth-bn-office365
 
 This gem allows you to use Azure Active Directory Authentication with OmniAuth for signing in users.
 
@@ -7,7 +7,7 @@ This gem allows you to use Azure Active Directory Authentication with OmniAuth f
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'azure-ad-ominauth'
+gem 'ominauth-bn-office365'
 ```
 
 And then execute:
@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 
-Add the azure_ad provider to the OmniAuth.rb initializer to use the provider.
+Add the office365 provider to the OmniAuth.rb initializer to use the provider.
 
-    provider :azure_ad, ENV['AZURE_APP_ID'], ENV['AZURE_APP_SECRET'],
+    provider :office365, ENV['AZURE_APP_ID'], ENV['AZURE_APP_SECRET'],
         allowed_domains: 'gmail.com'
