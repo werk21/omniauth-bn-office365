@@ -19,7 +19,7 @@ module OmniAuth
               token_url:     '/common/oauth2/v2.0/token'
 
       # Send the scope parameter during authorize
-      option :authorize_options, [:scope, :allowed_domains]
+      option :authorize_options, [:scope, :hd]
 
       # Unique ID for the user is the id field
       uid { raw_info['id'] }
@@ -46,7 +46,7 @@ module OmniAuth
 
       def authorize_params
         super.tap do |params|
-          %w[display allowed_domains scope auth_type].each do |v|
+          %w[display hd scope auth_type].each do |v|
             params[v.to_sym] = request.params[v] if request.params[v]
           end
 
@@ -86,11 +86,11 @@ module OmniAuth
       def verify_hd
         token = access_token.get('https://graph.microsoft.com/v1.0/me').parsed
 
-        return token unless options.allowed_domains
+        return token unless options.hd
 
         email = token["mail"] || token["userPrincipalName"]
 
-        unless options.allowed_domains.split(',').include?(email.split("@")[1])
+        unless options.hd.split(',').include?(email.split("@")[1])
           raise CallbackError.new(:invalid_hd, 'Invalid Hosted Domain')
         end
 
