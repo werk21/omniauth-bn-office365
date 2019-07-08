@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install omniauth-bn-launcher
+    $ gem install omniauth-bn-office365
 
 ## Usage
 
